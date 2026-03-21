@@ -29,7 +29,7 @@
             "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
         },
         "mega": {
-            "paths": ["Pose Mod/New version/PoseMod3"]
+            "paths": ["Pose Mod/New version/PoseMod3/*"]
         },
         "on_install": [
             {
@@ -53,7 +53,7 @@
         },
         "mega": {
             "paths": [
-                "Pose Mod/New version/PoseMod3",
+                "Pose Mod/New version/PoseMod3/*",
                 "Pose Mod/New version/Other injectors/BepInEx/PoseMod_BepInExPlugin.dll" // Tool will have to put DLL in BiE Plugins!
             ]
         }
@@ -66,8 +66,8 @@
         },
         "mega": {
             "paths": [
-                "Pose Mod/Old versions/Posemod 2/after-april-2020 builds (u2019)",
-                "Pose Mod/Old versions/Posemod 2/pre-april-2020 builds (u2017)"
+                "Pose Mod/Old versions/Posemod 2/after-april-2020 builds (u2019)/*",
+                "Pose Mod/Old versions/Posemod 2/pre-april-2020 builds (u2017)/*"
             ],
             "determine_path": {
                 "0": "Unity 2019+",
