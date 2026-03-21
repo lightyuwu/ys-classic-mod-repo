@@ -89,6 +89,7 @@
         ],
         "download": {
             "mod": "https://github.com/sinai-dev/UnityExplorer/releases/download/4.8.2/UnityExplorer.BepInEx5.Mono.zip"
-        }
+        },
+        "mod_result_path": "BepInEx" // Install subdirectories into BepInEx folder (not required to be used, unless it's in the wrong dir)
     }
 }
