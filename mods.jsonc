@@ -1,0 +1,82 @@
+{
+    "BepInEx": {
+        "download": {
+            "x86": "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x86_5.4.23.5.zip",
+            "x64": "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x64_5.4.23.5.zip"
+        },
+        "on_install": [
+            {
+                "type": "run_game_once" // Run to initialize BepInEx Config
+            },
+            {
+                "type": "modify_file",
+                "target": "BepInEx/config/BepInEx.cfg",
+                "original:": "Enabled = false",
+                "replacement": "Enabled = true" // Toggle Console to on
+            }
+        ]
+    },
+
+    "PoseMod 3": {
+        "download": {
+            "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
+            "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
+        },
+        "mega": {
+            "paths": ["Pose Mod/New version/PoseMod3"]
+        },
+        "on_install": [
+            {
+                "type": "launcher_set_exe_x86",
+                "value": "PoseMod32.exe"
+            },
+            {
+                "type": "launcher_set_exe_x64",
+                "value": "PoseMod64.exe"
+            }
+        ]
+    },
+
+    "PoseMod 3 - BepInEx (Recommended)": {
+        "download": {
+            "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
+            "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
+        },
+        "mega": {
+            "paths": [
+                "Pose Mod/New version/PoseMod3",
+                "Pose Mod/New version/Other injectors/BepInEx/PoseMod_BepInExPlugin.dll" // Tool will have to put DLL in BiE Plugins!
+            ]
+        }
+    },
+
+    "PoseMod 2": {
+        "download": {
+            "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
+            "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
+        },
+        "mega": {
+            "paths": [
+                "Pose Mod/Old versions/Posemod 2/after-april-2020 builds (u2019)",
+                "Pose Mod/Old versions/Posemod 2/pre-april-2020 builds (u2017)"
+            ],
+            "determine_path": {
+                "0": "Unity 2019+",
+                "1": "Unity 2017-"
+            }
+        },
+        "on_install": [
+            {
+                "type": "launcher_set_exe_x86",
+                "value": "kg_PoseMod.exe"
+            }
+            // No x64 needed, as that's 32-bit only
+        ]
+    },
+
+    "UnityExplorer": {
+        "download": {
+            "mod": "https://github.com/sinai-dev/UnityExplorer/releases/download/4.8.2/UnityExplorer.BepInEx5.Mono.zip"
+        }
+    }
+}
