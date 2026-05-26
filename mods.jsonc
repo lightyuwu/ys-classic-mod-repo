@@ -90,7 +90,8 @@
 			},
 			{
 				"type":"delete_folder", "value":"StreamingAssets/PoseMod"
-			}
+			},
+			{"type": "launcher_reset_exe_x86"},{"type": "launcher_reset_exe_x64"}
 		],
     },
 
@@ -116,15 +117,18 @@
                 "Pose Mod/New version/Other injectors/BepInEx/PoseMod_BepInExPlugin.dll" // Tool will have to put DLL in BiE Plugins!
             ]
         },
-		"on_uninstall": [
-			{
-				"type":"delete_folder", "value":"PoseMod"
-			},
+		"on_install": [
+			// Delete unneeded files
 			{
 				"type":"delete_file", "value":"PoseMod64.exe"
 			},
 			{
 				"type":"delete_file", "value":"PoseMod32.exe"
+			},
+		],
+		"on_uninstall": [
+			{
+				"type":"delete_folder", "value":"PoseMod"
 			},
 			{
 				"type":"delete_file", "value":"pmdebug.txt"
@@ -155,8 +159,7 @@
 			"bie5"
 		],
         "download": {
-            "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
-            "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
+            "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
         },
         "mega": {
             "paths": [
@@ -169,12 +172,42 @@
             }
         },
         "on_install": [
+			// No x64 needed, as that's 32-bit only
             {
                 "type": "launcher_set_exe_x86",
                 "value": "kg_PoseMod.exe"
-            }
-            // No x64 needed, as that's 32-bit only
-        ]
+            },
+			// Remove clutter
+			{
+				"type": "delete_file",
+				"value":"THIS IS AN OLD VERSION OF POSEMOD (open this file).txt"
+			}
+        ],
+		
+		"on_uninstall": [
+			{"type": "launcher_reset_exe_x86"},{"type": "launcher_reset_exe_x64"},
+			{
+				"type": "delete_file", "value": "kg_PoseMod.exe"
+			},
+			{
+				"type": "delete_file", "value": "kg_PoseMod.dll"
+			},
+			{
+				"type": "delete_file", "value": "pm_yan.dll"
+			},
+			{
+				"type": "delete_file", "value": "gamehook.dll"
+			},
+			{
+				"type": "delete_file", "value": "change_log.txt"
+			},
+			{
+				"type": "delete_file", "value": "kgcorlib.dll"
+			},
+			{
+				"type": "delete_file", "value": "How to install PoseMod.txt"
+			},
+		],
     },
 
     "UnityExplorer": {
