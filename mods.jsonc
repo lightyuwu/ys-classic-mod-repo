@@ -9,7 +9,8 @@
         },
         "on_install": [
             {
-                "type": "run_game_once" // Run to initialize BepInEx Config
+                "type": "run_game_once", // Run to initialize BepInEx Config
+				"wait_for_file": "BepInEx/config/BepInEx.cfg"
             },
             {
                 "type": "modify_file",
