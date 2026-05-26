@@ -149,6 +149,11 @@
 
     "PoseMod 2": {
 		"id":"pm2",
+		"incompatible_mods": [
+			"pm3",
+			"pm3bie",
+			"bie5"
+		],
         "download": {
             "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
             "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
