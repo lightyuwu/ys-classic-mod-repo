@@ -1,5 +1,6 @@
 {
     "BepInEx": {
+		"id":"bie5",
         "unsupported": [
             "5.*" // Unity 5 Totally Unsupported
         ],
@@ -7,6 +8,23 @@
             "x86": "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x86_5.4.23.5.zip",
             "x64": "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_win_x64_5.4.23.5.zip"
         },
+		"on_uninstall": [
+			{
+				"type":"delete_folder", "value":"BepInEx"
+			},
+			{
+				"type":"delete_file", "value":"winhttp.dll"
+			},
+			{
+				"type":"delete_file", "value":"doorstop_config.ini"
+			},
+			{
+				"type":"delete_file", "value":"changelog.txt"
+			},
+			{
+				"type":"delete_file", "value":".doorstop_version"
+			}
+		]
         "on_install": [
             {
                 "type": "run_game_once", // Run to initialize BepInEx Config
@@ -22,9 +40,14 @@
     },
 
     "PoseMod 3": {
+		"id":"pm3",
         "unsupported": [
             "5.*" // Unity 5 Totally Unsupported :/
         ],
+		"incompatible_mods": [
+			"pm3bie",
+			"bie5"
+		],
         "download": {
             "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
             "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
@@ -41,13 +64,48 @@
                 "type": "launcher_set_exe_x64",
                 "value": "PoseMod64.exe"
             }
-        ]
+        ],
+		
+		"on_uninstall": [
+			{
+				"type":"delete_folder", "value":"PoseMod"
+			},
+			{
+				"type":"delete_file", "value":"PoseMod64.exe"
+			},
+			{
+				"type":"delete_file", "value":"PoseMod32.exe"
+			},
+			{
+				"type":"delete_file", "value":"pmdebug.txt"
+			},
+			{
+				"type":"delete_file", "value":"How to install Posemod.txt"
+			},
+			{
+				"type":"delete_file", "value":"change_log.txt"
+			},
+			{
+				"type":"delete_file", "value":"__For Youtubers__.txt"
+			},
+			{
+				"type":"delete_folder", "value":"StreamingAssets/PoseMod"
+			}
+		],
     },
 
     "PoseMod 3 - BepInEx (Recommended)": {
+		"id":"pm3bie",
         "unsupported": [
             "5.*" // Unity 5 Totally Unsupported since BiE is unsupported
         ],
+		"incompatible_mods": [
+			"pm3",
+			"pm2"
+		],
+		"depends": [
+			"bie5",
+		],
         "download": {
             "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
             "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
@@ -57,10 +115,40 @@
                 "Pose Mod/New version/PoseMod3/*",
                 "Pose Mod/New version/Other injectors/BepInEx/PoseMod_BepInExPlugin.dll" // Tool will have to put DLL in BiE Plugins!
             ]
-        }
+        },
+		"on_uninstall": [
+			{
+				"type":"delete_folder", "value":"PoseMod"
+			},
+			{
+				"type":"delete_file", "value":"PoseMod64.exe"
+			},
+			{
+				"type":"delete_file", "value":"PoseMod32.exe"
+			},
+			{
+				"type":"delete_file", "value":"pmdebug.txt"
+			},
+			{
+				"type":"delete_file", "value":"How to install Posemod.txt"
+			},
+			{
+				"type":"delete_file", "value":"change_log.txt"
+			},
+			{
+				"type":"delete_file", "value":"__For Youtubers__.txt"
+			},
+			{
+				"type":"delete_folder", "value":"StreamingAssets/PoseMod"
+			},
+			{
+				"type":"delete_file", "value":"BepInEx/Plugins/PoseMod_BepInExPlugin.dll"
+			}
+		],
     },
 
     "PoseMod 2": {
+		"id":"pm2",
         "download": {
             "x86": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg",
             "x64": "https://mega.nz/folder/OFAiyZAL#jAmt_7c63A3Fwm60Pl_5fg"
@@ -85,9 +173,13 @@
     },
 
     "UnityExplorer": {
+		"id":"unityexplorer",
         "unsupported": [
             "5.*" // Unity 5 Totally Unsupported since BiE is unsupported
         ],
+		"depends": [
+			"bie5",
+		],
         "download": {
             "mod": "https://github.com/sinai-dev/UnityExplorer/releases/download/4.8.2/UnityExplorer.BepInEx5.Mono.zip"
         },
