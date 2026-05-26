@@ -24,7 +24,7 @@
 			{
 				"type":"delete_file", "value":".doorstop_version"
 			}
-		]
+		],
         "on_install": [
             {
                 "type": "run_game_once", // Run to initialize BepInEx Config
